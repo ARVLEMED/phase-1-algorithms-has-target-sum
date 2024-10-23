@@ -1,17 +1,33 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+  const checkedNumbers = new Set();
+
+  for (const number of array) {
+    const complement = target - number;
+    if (checkedNumbers.has(complement)) {
+      return true; 
+    }
+    checkedNumbers.add(number);
+  }
+
+  return false; 
 }
 
+
 /* 
-  Write the Big O time complexity of your function here
+  o(n)
 */
 
 /* 
-  Add your pseudocode here
+  iterate through numbers in array,
+  subtract each from target to look for complement
+  if complement available return true else false
 */
 
 /*
-  Add written explanation of your solution here
+  i will write a function that initializes an empty array to store 
+  new set of new numbers after iteration of each value and subtrated
+  from target to find complement .if complement is there returns true 
+  else false
 */
 
 // You can run `node index.js` to view these console logs
